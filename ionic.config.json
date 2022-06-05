@@ -1,0 +1,7 @@
+{
+  "name": "Pilas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
