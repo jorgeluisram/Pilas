@@ -1,0 +1,156 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Juego</ion-title>
+    <ion-buttons slot="end">
+      <ion-button  [routerLink]="['/home']">
+        <ion-icon name="arrow-back-outline" style="font-size: 40px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <br>
+  <ion-item>
+    <ion-label>Aciertos</ion-label>
+    <ion-badge color="success" slot="end">{{ Aciertos }}</ion-badge>
+  </ion-item>
+  <ion-item>
+    <ion-label>Intentos</ion-label>
+    <ion-badge color="success" slot="end">{{Intentos}}</ion-badge>
+  </ion-item>
+  <br>
+  <br>
+  <ion-grid >
+    <ion-row  >
+      <ion-col size="3" *ngFor="let item of Cartas ; index as i" >
+        <ion-card [color]="item.visible == true ? 'warning' : 'dark'" (click)="verifica(item,i)" [disabled]="item.Adivinado"> <!--   -->
+          <div *ngIf="item.Adivinado == true">
+            <img  [src]="item.src" style="text-align: center;"/>
+          </div>
+          <div *ngIf="item.visible == false; else elseBlock">
+            <img  [hidden]="item.visible" src="assets/resorces/Pilas.PNG" style="text-align: center;"/>
+          </div>
+            <ng-template #elseBlock>
+              <img  [src]="item.src" style="text-align: center;"/>
+            </ng-template>
+           <!-- <img  [hidden]="item.visible" src="assets/resorces/Pilas.PNG" style="text-align: center;"/>  -->  <!-- oculta -->
+          <!-- <img [hidden]="item.visible" [src]="item.src" style="text-align: center;"/>  --> 
+         </ion-card>
+         <!-- <h2>{{item.Text}}</h2>  -->
+        <!-- <h2>{{item.length}}</h2> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!-- [hidden]="i> 4" -->
+
+<!-- <ion-content > -->
+<!--   <ion-item>
+    <ion-label>Aciertos</ion-label>
+    <ion-badge color="success" slot="end">{{Aciertos}}</ion-badge>
+  </ion-item> -->
+  <!-- <ion-grid ion-grid-width-xs>
+  
+    <ion-row >
+      <ion-col >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[0].src"> 
+        </ion-card>
+      </ion-col>
+      <ion-col >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[1].src" > 
+        </ion-card>
+      </ion-col>
+      <ion-col >
+        <ion-card color="dark">
+          <img class="icon"[src]="this.Cartas[2].src" > 
+        </ion-card>
+      </ion-col>
+      <ion-col >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[3].src" > 
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row >
+      <ion-col >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[4].src"> 
+        </ion-card>
+      </ion-col>
+      <ion-col >
+        <ion-card color="dark">
+          <img class="icon"[src]="this.Cartas[5].src" > 
+        </ion-card>
+      </ion-col>
+      <ion-col >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[6].src" > 
+        </ion-card>
+      </ion-col>
+      <ion-col >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[7].src" > 
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[8].src"> 
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[9].src" > 
+        </ion-card>
+      </ion-col>
+      <ion-col  >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[10].src"> 
+        </ion-card>
+      </ion-col>
+      <ion-col  >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[11].src" > 
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[12].src"> 
+        </ion-card>
+      </ion-col>
+      <ion-col  >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[13].src" > 
+        </ion-card>
+      </ion-col>
+      <ion-col  >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[14].src" > 
+        </ion-card>
+      </ion-col>
+      <ion-col  >
+        <ion-card color="dark">
+          <img class="icon" [src]="this.Cartas[15].src" > 
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content> -->
+
+<ion-footer>
+  <!-- <ion-img src="assets/resorces/Pilas.PNG"></ion-img> -->
+  <div style="text-align: center;">
+    <img class="icon" src="assets/resorces/Pilas.PNG" style="max-width: 60%;"> 
+  </div>
+   
+</ion-footer>
