@@ -23,7 +23,7 @@
   <ion-grid >
     <ion-row  >
       <ion-col size="3" *ngFor="let item of Cartas ; index as i" >
-        <ion-card [color]="item.visible == true ? 'warning' : 'dark'" (click)="verifica(item,i)" [disabled]="item.Adivinado"> <!--   -->
+        <ion-card [color]="item.visible == true ? 'medium' : 'dark'" (click)="verifica(item,i)" [disabled]="item.Adivinado"> <!--   -->
           <div *ngIf="item.Adivinado == true">
             <img  [src]="item.src" style="text-align: center;"/>
           </div>
