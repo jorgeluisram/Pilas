@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Clipboard } from '@awesome-cordova-plugins/clipboard/ngx';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,6 +7,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private clipboard: Clipboard) {}
+  ngOnInit() {
+    
+    document.body.setAttribute('data-theme', 'dark');
+  }
+  Copy(){
+    debugger
+    alert("a")
+    this.clipboard.copy('Hello world');
+  }
+  facebook(){
+    window.open("https://www.facebook.com/PILASGUAT");
+  }
 
 }

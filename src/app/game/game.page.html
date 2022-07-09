@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Juego</ion-title>
+    <ion-buttons slot="end">
+      <ion-button  [routerLink]="['/home']">
+        <ion-icon name="arrow-back-outline" style="font-size: 40px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background">
+  <br>
+  <ion-item>
+    <ion-label slot="start">Aciertos</ion-label>
+    <ion-badge color="success" slot="start">{{ Aciertos }}</ion-badge>
+    <ion-label slot="end">Intentos</ion-label>
+    <ion-badge color="warning" slot="end">{{Intentos}}</ion-badge>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Nivel</ion-label>
+    <ion-badge color="primary" slot="end">{{nivel}}</ion-badge>
+  </ion-item>
+  <ion-grid >
+    <ion-row  >
+      <ion-col size="3" *ngFor="let item of Cartas ; index as i" >
+        <ion-card [color]="item.visible == true ? 'medium' : 'dark'" (click)="verifica(item,i)" [disabled]="item.Adivinado"> <!--   -->
+          <div *ngIf="item.visible == false && item.Adivinado == false">
+            <img  [hidden]="item.visible" src="assets/resorces/MEMORIAPILASAPP.jpg" style="text-align: center;"/>
+            <!-- <img  [hidden]="item.visible" src="assets/resorces/Pilas.PNG" style="text-align: center;"/> -->
+          </div>
+          <div *ngIf="item.visible == true">
+            <img  [src]="item.src" style="text-align: center;"/>
+          </div>
+          <div *ngIf="item.Adivinado == true">
+            <img  [src]="item.src" style="text-align: center;"/>
+          </div>
+          </ion-card>
+         <!-- <h2>{{item.Text}}</h2>  -->
+        <!-- <h2>{{item.length}}</h2> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!-- <ion-footer> -->
+  <!-- <ion-img src="assets/resorces/Pilas.PNG"></ion-img> -->
+ <!--  <div style="text-align: center;">
+    <img class="icon" src="assets/resorces/Pilas.PNG" style="max-width: 60%;"> 
+  </div> -->
+   
+<!-- </ion-footer> -->

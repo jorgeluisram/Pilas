@@ -1,20 +1,71 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Menu
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="background" [fullscreen]="true">
+  <ion-grid>
+  <br />
+  <br />
+  <br />
+  <br />
+    <ion-row class="ion-align-items-center">
+    <ion-col size="12" class="ion-text-center">
+    <!--   <img class="icon" src="assets/resorces/Pilas.PNG" alt="" -->
+    </ion-col>
+    
+  </ion-row>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12" class="ion-text-center">
+      <ion-button size="small" color="dark" shape="round" [routerLink]="['/game']">Jugar</ion-button>
+    </ion-col>
+    
+  </ion-row>
+  <br />
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12" class="ion-text-center">
+     <!--  <ion-button size="small" color="dark" shape="round" >Compartir</ion-button> -->
+    </ion-col>
+    
+  </ion-row>
+  <br />
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12" class="ion-text-center">
+      <a target="_blank" rel="noopener noreferrer" href="https://pilasguatemala.com/">
+        <ion-button size="small" color="dark" shape="round"  >Visitar página web</ion-button>
+      </a>
+    </ion-col>
+    
+    
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  </ion-row>
+  </ion-grid>
+  
+  
+ 
+  
+  
+
+ 
 </ion-content>
+<ion-footer style="height: 10%; text-align: center;">
+  <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/PILASGUAT" >
+    <ion-button fill="outline" color="dark">
+      <ion-icon size="large" name="logo-facebook"></ion-icon>
+    </ion-button>
+  </a>
+
+  <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/pilas100gt/">
+    <ion-button fill="outline" color="dark">
+      <ion-icon size="large" name="logo-instagram"></ion-icon>
+    </ion-button>
+  </a>
+</ion-footer>
