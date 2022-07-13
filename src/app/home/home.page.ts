@@ -13,7 +13,7 @@ export class HomePage {
     document.body.setAttribute('data-theme', 'dark');
   }
   Copy(){
-    debugger
+    
     alert("a")
     this.clipboard.copy('Hello world');
   }
